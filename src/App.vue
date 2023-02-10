@@ -1,32 +1,24 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-main>
+      <v-toolbar dark>
+        <v-toolbar-items>
+          <router-link class="v-btn v-btn--is-elevated v-btn--has-bg theme--dark v-size--default" to="/">First page</router-link>
+          <router-link class="v-btn v-btn--is-elevated v-btn--has-bg theme--dark v-size--default" to="/second" >Second page</router-link>
+        </v-toolbar-items>
+      </v-toolbar>
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-nav {
-  padding: 30px;
-}
+export default {
+  name: 'App',
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>

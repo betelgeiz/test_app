@@ -1,18 +1,37 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <v-alert
+      dense
+      text
+      type="success"
+    >
+      {{ getToken }}
+    </v-alert>
+    <OrderBook :title="'bids'" :arr="getBids" />
+    <OrderBook :title="'asks'" :arr="getAsks" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import OrderBook from '../components/OrderBook'
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
-  name: 'HomeView',
+  name: 'Home',
+
   components: {
-    HelloWorld
+    OrderBook
+  },
+  data: () => ({
+  }),
+  created() {
+    this.getOrderBook()
+  },
+  computed: {
+    ...mapGetters(['getBids', 'getAsks', 'getToken'])
+  },
+  methods: {
+    ...mapActions(['getOrderBook'])
   }
 }
 </script>
