@@ -52,29 +52,7 @@
         arr: {
           type: Array
         }
-      },
-      data () {
-        return {
-          desserts: [
-            {
-              name: 2,
-              calories: 159,
-            },
-            {
-              name: 3,
-              calories: 237,
-            },
-            {
-              name: 5,
-              calories: 262,
-            },
-            {
-              name: 6,
-              calories: 305,
-            }
-          ],
-        }
-      },
+      }
     }
   </script>
 
